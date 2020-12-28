@@ -1,28 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Heather Strodtman Portfolio Website</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    </head>
-    <body>
-        <header> 
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list">
-                    
-                </ul>
-            </nav>
-        </header>
-        <main>
-
-        </main>
-        <footer>
-
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heather Strodtman Portfolio Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+          <li class="nav__item">
+            <a class="nav__link" href="#skills">Skills</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#about">About Me</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#work">My Work</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="intro" id="home">
+      <h1 class="intro__title">Heather Strodtman</h1>
+      <p class="intro__subtitile">Full Stack Web Developer - Kansas City, MO</p>
+      <img
+        src="images/royals_headshot.jpg"
+        alt="Heather Strodtman at a Royal's game"
+        style="height: 400px"
+      />
+    </section>
+    <section class="skills" id="skills">
+      <h2 class="skills__title">What I Do</h2>
+      <!-- Below will hold icons for tech skills -->
+      <div class="skills__container"></div>
+      <a href="#work" class="btn">My Work</a>
+    </section>
+    <section class="about-me" id="about">
+      <h2 class="about-me__title">About Me</h2>
+      <p class="about-me__subtitle"> Hi, I'm Heather Strodtman
+      </p>
+      <p class=about-me__content>I am a web developer who recently finished LaunchCode’s LC101 full stack
+        web development course. I enjoy problem solving and have a passion for
+        creating a user experience that involves intuitive design and promotes a
+        mindful, value added web experience.</p>
+        <img src="images/family_pic.jpg" alt="Heather Strodtman with her husband and two kids" style="height: 400px; ">
+    </section>
+    <section class="my-work" id="work">
+        <h2 class="work__title">My Work</h2>
+        <p class="work__subtitle">Here is some of my work</p>
+        <div class="work__content">
+            <a href="#" class="work__item">
+                <img src="images/herp2.JPG" alt="orange and black salamander" class="work__image" style="height: 400px; ">
+            </a>
+            <a href="#" class="work__item">
+                <img src="images/water_garden_portfolio_pic.JPG" alt="water garden read-me introduction" class="work__image" style="height: 400px;">
+            </a>
+        </div>
+    </section>
+    <footer class="contact" id="contact" >
+        <a href="mailto:heatherstrodtman@gmail.com" class="contact__link">heatherstrodtman@gmail.com</a>
+        <ul class="contact__list"> 
+            <li class="contact__item"><a href="https://www.linkedin.com/in/heather-strodtman/" class="contact__link">LinkedIn</a></li>
+            <li class="contact__item"><a href="https://github.com/hstrodtman" class="contact__link">GitHub</a></li>
+        </ul>
+    </footer>
+  </body>
 </html>
