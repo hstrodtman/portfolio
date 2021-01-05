@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heather Strodtman Portfolio Website</title>
     <link
       rel="stylesheet"
@@ -16,11 +16,13 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
+
+    <!-- Header -->
     <header>
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
@@ -43,51 +45,82 @@
         </ul>
       </nav>
     </header>
+
+    <!-- Introduction -->
+
     <section class="intro" id="home">
+      <!-- <div class="intro-text__container"> -->
+      <h1 class="section__title section__title--intro"><strong>Heather Strodtman</strong></h1>
+      <p class="section__subtitle section__subtitle--intro">Full Stack Web Developer - Kansas City, MO</p> <!-- If issues with resizing take of KC MO -->
+      </div>
       <img class="intro__image"
       src="images/hstrodtman_headshot.png"
       alt="Photo of Heather Strodtman at a Royal's game" 
     />
-      <div class="intro-text__container">
-      <h1 class="section__title intro__title">Heather Strodtman</h1>
-      <p class="section__subtitle intro__subtitle">Full Stack Web Developer - Kansas City, MO</p>
-      </div>
-
-
     </section>
-    <section class="skills" id="skills">
-      <h2 class="section__title skills__title">What I Do</h2>
+
+    <!-- Skills -->
+    <section class="my-skills" id="skills">
+      <h2 class="section__title section__title--skills">What I Do/Skills</h2>
       <!-- Below will hold icons for tech skills -->
-      <div class="skills__container"></div>
-      <a href="#work" class="btn">My Work</a>
+      <div class="skills">
+        <div class="skill">
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill">
+          <h3>Java</h3>
+        </div>
+        <div class="skill">
+          <h3>Git</h3>
+        </div>
+        <div class="skill">
+          <h3>HTML</h3>
+        </div>
+        <div class="skill">
+          <h3>CSS</h3>
+        </div>
+      </div>
+      <a href="#work" class="btn">My Work</a>  <!-- Could put My Portfolio -->
     </section>
+
+   
+    <!-- About Me -->
     <section class="about-me" id="about">
-      <h2 class="section__title about-me__title">About Me</h2>
-      <p class=" section__subtitle about-me__subtitle"> Hi, I'm Heather Strodtman
+      <h2 class="section__title section__title--about">About Me</h2>
+      <p class=" section__subtitle section__subtitle--about"> Hi, I'm Heather Strodtman
       </p>
-      <p class="about-me__content">I am a web developer who recently finished LaunchCode’s LC101 full stack
-        web development course. I enjoy problem solving and have a passion for
-        creating a user experience that involves intuitive design and promotes a
-        mindful, value added web experience.</p>
+      <div class="about-me__content">
+        <p>I am a web developer who recently finished LaunchCode’s LC101 full stack
+          web development course. I enjoy problem solving and have a passion for
+          creating a user experience that involves intuitive design and promotes a
+          mindful, value added web experience.</p>
+      </div>
         <img src="images/family_pic.jpg" alt="Heather Strodtman with her husband and two daughters">
     </section>
+
+    <!-- My Work -->
     <section class="my-work" id="work">
-        <h2 class="section__title work__title">My Work</h2>
-        <p class="section__subtitle work__subtitle">Here is some of my work</p>
+        <h2 class="section__title section__title--work">My Work</h2>
+        <p class="section__subtitle section__subtitle--work">Here is some of my work</p>
         <div class="work__content">
+          <!-- Portfolio Item -->
             <a href="#" class="work__item">
                 <img src="images/herp2.JPG" alt="orange and black salamander" class="work__image">
             </a>
+
+            <!-- Portfolio Item -->
             <a href="#" class="work__item">
                 <img src="images/water_garden_portfolio_pic.JPG" alt="water garden read-me introduction" class="work__image">
             </a>
         </div>
     </section>
-    <footer class="contact" id="contact" >
+
+    <!-- Footer -->
+    <footer class="contact" id="contact">
         <a href="mailto:heatherstrodtman@gmail.com" class="contact__link">Email Me <span class="arrow-right">→</span></a>
-        <ul class="contact__list"> 
-            <li class="contact__item"><a href="https://www.linkedin.com/in/heather-strodtman/" class="contact__link">LinkedIn</a></li>
-            <li class="contact__item"><a href="https://github.com/hstrodtman" class="contact__link">GitHub</a></li>
+        <ul class="contact-list"> 
+            <li class="contact-list__item"><a href="https://www.linkedin.com/in/heather-strodtman/" class="contact-list__link">LinkedIn</a></li>
+            <li class="contact-list__item"><a href="https://github.com/hstrodtman" class="contact-list__link">GitHub</a></li>
         </ul>
     </footer>
   </body>

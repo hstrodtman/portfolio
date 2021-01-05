@@ -83,12 +83,9 @@ header {
 }
 
 .intro-text__container {
+    background: linear-gradient(#EAE7DC, grey);
     /* background-image: url("/images/background.jpg");
     background-color: var(--color-accent);  */
-    /* background-color: #2d4159; */
-    /* background-color:#48111E;  */
-    /* background-color: #005957; */
-    opacity: 1;
     /* border: .4rem solid black;  */
     /* border-radius: 10px; */
     color: black; 
@@ -106,33 +103,26 @@ header {
     display: inline-block;
 }
 
-.intro {
-    position: relative;
-    background: linear-gradient(#EAE7DC, grey);
-}
-
 .nav {
     /* display: none;  */
     background-color: black;
 }
 
-.intro__image {
+/* .intro__image { */
     /* box-shadow: var(--bs); */
     /* margin: 2em auto; */
-}
+/* }  */
 
 @media (min-width: 600px){
     .intro {
-        /* display: flex;
-        justify-content: space-between; */
         display: grid; 
-        grid-template-columns: 1fr 1fr 1fr;
-        /* grid-template-areas: 
-        ". img title"
-        ". img title";  */
-        margin: 0 0 5rem 0; 
+        grid-template-columns: 1fr 3fr;
+        grid-column-gap: 1em;
+        width: min-content;
         align-items: center;
-        padding: 8rem 4rem 0rem 0rem; 
+        /* padding: 0rem 4rem 0rem 0rem;  */
+        /* grid-template-columns: min-content max-content; */
+        /* margin: 0 auto 5rem;  */
     }
 
     .intro__image {
@@ -144,35 +134,13 @@ header {
     }
 
     .intro-text__container {
-        /* display: flex; 
-        flex-wrap: wrap; */
-        /* justify-content: start; */
-        /* justify-self: start;  */
-        /* grid-area: title;  */
+        display: grid; 
         grid-column: 2/4; 
         /* position: relative;  */
         text-transform: uppercase;
-        max-width: 98%;
-        /* justify-self: end; */
-        /* padding: 0rem 10rem 10rem 0rem;  */
+        padding: 0rem 10rem 10rem 10rem; 
+        align-self: start;
+        width: calc(100% - 1.5em);
+        text-align: start;
     } 
-/*     
-     .intro__title {
-        display: flex;
-        justify-self: center;
-     }
-
-     .intro__subtitle {
-        display: flex;
-        justify-self: center;
-     } */
-        
-        /* flex-wrap: wrap; */
-        /* align-self: flex-end; */
-        /* text-align: start; */
-        /* padding-left: 10rem;
-        padding-top: 5rem; */
-        /* padding: 0rem 10rem 10rem 0rem;  */
-
-   /* } */
 }
