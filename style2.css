@@ -43,6 +43,17 @@ body {
     line-height: 1.6; 
 }
 
+section {
+    padding: 5em 2em;
+}
+
+/* Keeping right and top padding off the intro section */
+/* Probably only need to do this at larger screen sizes */
+
+/* .intro {
+    padding: 0em 0em 5em 2em; 
+} */
+
 img {
     display: block; 
     max-width: 100%; 
@@ -69,8 +80,23 @@ h3 {
     font-size: var(--fs-h3); 
 }
 
+/* Probably do no need this because don't have regular font weight set for intro title like tutorial  */
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
 .section__title {
     margin-bottom: .25em;
+}
+
+/* Changes the margin for the intro to padding so no color difference */
+/* May need to change bottom padding to only for larger screens or add a div around and change background
+because small gap between titl and subtitle can occur on larger screens */ 
+
+.section__title--intro {
+    margin-bottom: 0;
+    padding-bottom: .2em; 
 }
 
 .section__subtitle {
@@ -81,8 +107,65 @@ h3 {
 .section__subtitle--intro,
 .section__subtitle--about {
     font-family: var(--ff-secondary);
+    margin-bottom: 1em;
 }
 
 .section__subtitle--about {
     background-color: var(--color-accent);
 }
+
+/* If this does not work, set up a div which contains both elements */
+.section__subtitle--intro, 
+.section__title--intro {
+    background-color: var(--color-accent);
+}
+
+/* Header */
+
+nav {
+    display: none; 
+}
+
+/* Intro Section */
+
+.intro {
+    position: relative; 
+}
+
+/* May need to change this breakpoint depending on pics and text */
+/* Look at area that text starts to overlap with picture */
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid; 
+        /* may not need this gap */
+        grid-column-gap: 1em;
+        width: min-content; 
+        margin: 0 auto; 
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__image {
+        grid-area: img; 
+        /* updated from 250px */
+        min-width: 400px; 
+    }
+
+    .section__subtitle--intro {
+        align-self: start; 
+        grid-column: -1 / 1; 
+        grid-row: 2; 
+        text-align: right; 
+    }
+
+    /* .section__title--intro {
+        align-self: start; 
+        grid-column: -1 / 1;
+        grid-row: 1; 
+        text-align: right;
+    } */
+}
+
