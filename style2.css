@@ -15,7 +15,7 @@
 
     --color-light: #ffffff; 
     --color-dark: #303030;  
-    --color-accent: lightgray;  
+    --color-accent: #5f2a38; 
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -50,9 +50,9 @@ section {
 /* Keeping right and top padding off the intro section */
 /* Probably only need to do this at larger screen sizes */
 
-/* .intro {
-    padding: 0em 0em 5em 2em; 
-} */
+.intro {
+    padding: 15em 0em 0em 2em; 
+}
 
 img {
     display: block; 
@@ -90,13 +90,8 @@ strong {
     margin-bottom: .25em;
 }
 
-/* Changes the margin for the intro to padding so no color difference */
-/* May need to change bottom padding to only for larger screens or add a div around and change background
-because small gap between titl and subtitle can occur on larger screens */ 
-
 .section__title--intro {
-    margin-bottom: 0;
-    padding-bottom: .2em; 
+    font-weight: var(--ff-reg);
 }
 
 .section__subtitle {
@@ -114,12 +109,6 @@ because small gap between titl and subtitle can occur on larger screens */
     background-color: var(--color-accent);
 }
 
-/* If this does not work, set up a div which contains both elements */
-.section__subtitle--intro, 
-.section__title--intro {
-    background-color: var(--color-accent);
-}
-
 /* Header */
 
 nav {
@@ -130,42 +119,108 @@ nav {
 
 .intro {
     position: relative; 
+    /* margin-bottom: 5em;  */
 }
 
 /* May need to change this breakpoint depending on pics and text */
 /* Look at area that text starts to overlap with picture */
 
 @media (min-width: 600px) {
-    .intro {
+
+    .intro__container {
         display: grid; 
-        /* may not need this gap */
-        grid-column-gap: 1em;
-        width: min-content; 
+        grid-column-gap: 2em;
+        /* Original width setting was min-content*/
+        max-width: 1140px; 
         margin: 0 auto; 
         grid-template-areas: 
             "img title"
             "img subtitle";
-        grid-template-columns: min-content max-content;
+        grid-template-columns: 40% 60%;
     }
+
+    /* Adding the colored background */
+    .intro:before {
+        content: ""; 
+        position: absolute;
+        right: 0%; 
+        top: 0%; 
+        width: 68%;
+        height: 100%;  
+        /* background-color: var(--color-light);   */
+        /* background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80);  */
+        /* background-size: cover; 
+        background-blend-mode: multiply; */
+        
+    }
+
+    /* Setting color for left side of intro, may take out */
+
+    .intro__container:before {
+        content: ""; 
+        position: absolute;
+        left: 0%; 
+        top: 0%; 
+        width: 32%;
+        height: 100%; 
+        /* background-color: darkcyan;  */
+        /* background: linear-gradient(#eb01a5, #d13531);    */
+        /* background-image: url(https://images.unsplash.com/photo-1513624954087-ca7109c0f710?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); */
+    }
+
+    /* Considering adding another container for visual impact */
+    /* /* .intro__container:after  */
 
     .intro__image {
         grid-area: img; 
-        /* updated from 250px */
-        min-width: 400px; 
+        min-width: 600px;  
     }
+
+    .section__title--intro {
+        display: grid;
+        align-content: start;
+        /* these changes may need undone if responsivness is broken */
+        position: absolute;
+        bottom: 40%; 
+        left: 55%; 
+    }    
 
     .section__subtitle--intro {
-        align-self: start; 
-        grid-column: -1 / 1; 
         grid-row: 2; 
-        text-align: right; 
+        position: absolute;
+        bottom: 25%; 
+        left: 55%; 
     }
 
-    /* .section__title--intro {
-        align-self: start; 
-        grid-column: -1 / 1;
-        grid-row: 1; 
-        text-align: right;
-    } */
+    /* needed with the intro:before background setup */
+    .intro__image, 
+    .section__title--intro, 
+    .section__subtitle--intro {
+          z-index: 1;
+    }
+
+    .intro {
+        background-image: url(https://images.unsplash.com/photo-1589306962951-b3da28bfdfac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80);
+        background-size: cover; 
+        background-color: rgb(211, 211, 211); 
+        background-blend-mode: multiply;
+    }
+}
+
+/* My skills section */
+
+.my-skills {
+    background-color: var(--color-light); 
+    /* background-image: url(images/artem-sapegin-b18TRXc8UPQ-unsplash.jpg); */
+    /* makes it so the background does not repeat */
+    background-size: cover; 
+    /* can be used to adjust the coloring of a background image with a background color */
+    /* background-blend-mode: multiply;   */
+    color: var(--color-dark); 
+    text-align: center; 
+}
+
+.section__title--skills {
+    /* color: var(--color-accent);  */
 }
 
