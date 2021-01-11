@@ -15,7 +15,7 @@
 
     --color-light: #ffffff; 
     --color-dark: #303030;  
-    --color-accent: #5f2a38; 
+    --color-accent: #bbdde1; 
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -59,6 +59,21 @@ img {
     max-width: 100%; 
 }
 
+
+.btn {
+    display: inline-block; 
+    padding: .5em 2.5em;
+    background-color: var(--color-accent);
+    text-decoration: none;
+    color: var(--color-dark);
+    /* text-transform: uppercase; */
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
 /* Typography */
 
 h1, 
@@ -122,6 +137,12 @@ nav {
     /* margin-bottom: 5em;  */
 }
 
+/* Skills */
+
+.skill {
+    margin: 1.5em 0;
+}
+
 /* May need to change this breakpoint depending on pics and text */
 /* Look at area that text starts to overlap with picture */
 
@@ -139,7 +160,7 @@ nav {
         grid-template-columns: 40% 60%;
     }
 
-    /* Adding the colored background */
+    /* Adding colored background to only right sided of header, may take out */
     .intro:before {
         content: ""; 
         position: absolute;
@@ -147,10 +168,10 @@ nav {
         top: 0%; 
         width: 68%;
         height: 100%;  
-        /* background-color: var(--color-light);   */
-        /* background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80);  */
-        /* background-size: cover; 
-        background-blend-mode: multiply; */
+        background-color: var(--color-light);  
+        background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80); 
+        background-size: cover; 
+        background-blend-mode: multiply;
         
     }
 
@@ -200,27 +221,58 @@ nav {
     }
 
     .intro {
-        background-image: url(https://images.unsplash.com/photo-1589306962951-b3da28bfdfac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80);
+        /* background-image: url(https://images.unsplash.com/photo-1589306962951-b3da28bfdfac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80); */
         background-size: cover; 
-        background-color: rgb(211, 211, 211); 
+        background-color: var(--color-light);
         background-blend-mode: multiply;
+        /* Consider changing background color spashes */
+        background-blend-mode: screen; 
     }
 }
 
 /* My skills section */
 
 .my-skills {
-    background-color: var(--color-light); 
-    /* background-image: url(images/artem-sapegin-b18TRXc8UPQ-unsplash.jpg); */
+    background-color: var(--color-dark); 
+    background-image: url(images/artem-sapegin-b18TRXc8UPQ-unsplash.jpg);
     /* makes it so the background does not repeat */
     background-size: cover; 
     /* can be used to adjust the coloring of a background image with a background color */
-    /* background-blend-mode: multiply;   */
-    color: var(--color-dark); 
+    background-blend-mode: multiply;  
+    color: var(--color-light); 
     text-align: center; 
+    border-top: var(--color-accent) 15px solid;
 }
 
 .section__title--skills {
-    /* color: var(--color-accent);  */
+    color: var(--color-accent); 
+    position: relative; 
+}
+
+.section__title--skills::after { 
+    content: ""; 
+    display: block;
+    width: 3em; 
+    height: 1px; 
+    margin: .5em auto 1em; 
+    /* could use currentColor below to match text color */
+    background: var(--color-accent);
+    opacity: 0.5;
+}
+
+.skills {
+    margin-bottom: 4em;
+}
+
+/* Have two columns of icons at smaller sizes */
+
+@media (min-width: 800px) {
+    .skills {
+        display: flex;
+        justify-content: space-between;
+        max-width: 90%;
+        margin: 2em auto 3em; 
+        text-align: center;
+    }
 }
 
