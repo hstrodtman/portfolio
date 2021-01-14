@@ -21,6 +21,9 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem; 
     --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
 @media (min-width: 800px) {
@@ -275,4 +278,72 @@ nav {
         text-align: center;
     }
 }
+
+/* About Me section */
+
+.about-me {
+    max-width: 92%; 
+    margin: 0 auto;
+    
+}
+
+.about-me__image {
+    box-shadow: var(--bs);
+}
+
+@media (max-width: 600px) {
+
+    .section__title--about,
+    .section__subtitle--about {
+        text-align: center;
+    }
+}
+
+
+
+@media (min-width: 600px){
+
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px; 
+        grid-template-areas: 
+        "title img"
+        "subtitle img"
+        "content img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1/-1;
+        grid-row: 2; 
+        position: relative;
+        left: -1em; 
+        width: calc(100% + 4em); 
+        padding-left: 1em; 
+    }
+
+    .about-me__image {
+        grid-row: 1/-1;
+        grid-column: 2;
+        position: relative;
+        z-index: 2; 
+    }
+}
+
+@media (min-width: 800px) {
+    .about-me {
+        grid-template-columns: 1fr 300px;
+    }    
+}
+
+@media (max-width: 1000px) {
+    .intro__image {
+        min-width: 500px;
+    }
+}
+
 
