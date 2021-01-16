@@ -127,6 +127,15 @@ strong {
     background-color: var(--color-accent);
 }
 
+.section__subtitle--work {
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.section__title--work {
+    color: var(--color-accent);
+}
+
 /* Header */
 
 nav {
@@ -344,6 +353,42 @@ nav {
     .intro__image {
         min-width: 500px;
     }
+}
+
+/* My Work */
+
+.my-work {
+    background-color: var(--color-dark);
+    color: var(--color-light); 
+    text-align: center;
+}
+
+.work__content {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;    
+}
+
+.work__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.work__item {
+    background-color: var(--color-accent);
+    overflow: hidden;
+}
+
+.work__image {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), 
+    opacity 250ms linear; 
+}
+
+.work__image:hover {
+    transform: scale(1.2) ;
+    opacity: .5;
 }
 
 
