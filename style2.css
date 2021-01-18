@@ -14,6 +14,7 @@
     --fw-bold: 900; 
 
     --color-light: #ffffff; 
+    --color-light: white; 
     --color-dark: #303030;  
     --color-accent: #bbdde1; 
 
@@ -48,13 +49,6 @@ body {
 
 section {
     padding: 5em 2em;
-}
-
-/* Keeping right and top padding off the intro section */
-/* Probably only need to do this at larger screen sizes */
-
-.intro {
-    padding: 15em 0em 0em 2em; 
 }
 
 img {
@@ -138,15 +132,155 @@ strong {
 
 /* Header */
 
-nav {
-    display: none; 
+@media (min-width: 600px) {
+    header {
+        /* display: flex;
+        justify-content: space-between; */
+        padding: 1em;
+        /* Need below when header is inside introduction in HTML */
+        position: fixed; 
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        z-index: 100;
+    }
+}
+
+/* Nav all sizes */
+
+.nav {
+    position: fixed; 
+    transform: translate(100%); 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 100;
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex; 
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0; 
+}
+
+.nav__list a {
+    font-size: var(--fs-h2); 
+    color: var(--color-accent);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    opacity: .5; 
+}
+
+.nav-toggle {
+    padding: .5em; 
+    background: transparent; 
+    border: 0; 
+    cursor: pointer;
+    position: absolute; 
+    z-index: 1000;
+}
+
+.hamburger { 
+    display: block;
+    position: relative;
+}
+
+.hamburger, 
+.hamburger::before, 
+.hamburger::after {
+    background-color: var(--color-dark);
+    width: 2em; 
+    height: 4px; 
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::after, 
+.hamburger::before {
+    content: ""; 
+    position: absolute;
+    left: 0; 
+    right: 0; 
+}
+
+.hamburger::before {
+    top: 8px; 
+}
+
+.hamburger::after {
+    bottom: 8px; 
+}
+
+/* Small screen header and nav*/
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 1em; 
+    }
+    
+    .nav {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+
+    }
+    
+    .nav__list {
+            align-items: center;
+            padding: 0; 
+    }
+
+    .nav-toggle {
+        right: 1em; 
+        top: 1em; 
+    }
+}
+
+
+/* Nav on large screens */
+
+@media (min-width: 600px) {
+
+    .nav {
+        background-color: transparent; 
+        color: var(--color-accent);
+    }
+
+    .nav__list {
+       max-height: 50%;
+       padding-top: 2em;
+    }
+        
+    .nav__list a {
+        font-size: 2rem; 
+        text-shadow: -1px 1px 0px #000,
+                      1px 1px 0px #000,
+                      1px -1px 0 #000,
+                      -1px -1px 0 #000;    
+        letter-spacing: .2rem; 
+    }
+
+    .nav-toggle {
+        left: 1em; 
+        top: 1em;
+    }
+    
 }
 
 /* Intro Section */
 
 .intro {
     position: relative; 
-    /* margin-bottom: 5em;  */
+    background-color: var(--color-accent); /* setting the intro background color at small screens */
 }
 
 /* Skills */
@@ -155,10 +289,23 @@ nav {
     margin: 1.5em 0;
 }
 
+@media (max-width: 600px) {
+    .intro{
+        position: relative; 
+        bottom: 0;
+        padding: 6em 2em 0; 
+        margin: 0 auto;   
+    }
+}
+
 /* May need to change this breakpoint depending on pics and text */
 /* Look at area that text starts to overlap with picture */
 
 @media (min-width: 600px) {
+
+    .intro {
+        padding: 15em 0em 0em 2em; 
+    }
 
     .intro__container {
         display: grid; 
@@ -180,10 +327,11 @@ nav {
         top: 0%; 
         width: 68%;
         height: 100%;  
-        background-color: var(--color-light);  
+        /* background-color: var(--color-accent);   */
         background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80); 
+        background-image: url(https://images.unsplash.com/photo-1586788224331-947f68671cf1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80);
         background-size: cover; 
-        background-blend-mode: multiply;
+        /* background-blend-mode: multiply; */
         
     }
 
@@ -232,13 +380,14 @@ nav {
           z-index: 1;
     }
 
+    /* sets the background for full intro if not using before/after sudo elements for color*/
+
     .intro {
+        background-color: var(--color-light);
         /* background-image: url(https://images.unsplash.com/photo-1589306962951-b3da28bfdfac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80); */
         background-size: cover; 
-        background-color: var(--color-light);
-        background-blend-mode: multiply;
+        /* background-blend-mode: multiply; */
         /* Consider changing background color spashes */
-        background-blend-mode: screen; 
     }
 }
 
@@ -253,7 +402,6 @@ nav {
     background-blend-mode: multiply;  
     color: var(--color-light); 
     text-align: center; 
-    border-top: var(--color-accent) 15px solid;
 }
 
 .section__title--skills {
@@ -274,6 +422,14 @@ nav {
 
 .skills {
     margin-bottom: 4em;
+    font-size: 3.5rem;
+}
+
+@media (min-width: 600px) {
+
+    .my-skills {
+        border-top: var(--color-accent) 15px solid;
+    }
 }
 
 /* Have two columns of icons at smaller sizes */
@@ -283,7 +439,7 @@ nav {
         display: flex;
         justify-content: space-between;
         max-width: 90%;
-        margin: 2em auto 3em; 
+        margin: 2em auto; 
         text-align: center;
     }
 }
@@ -367,7 +523,7 @@ nav {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     grid-auto-rows: 1fr;
-    grid-gap: 1em;    
+    grid-row-gap: 3em;
 }
 
 .work__image {
@@ -379,6 +535,7 @@ nav {
 .work__item {
     background-color: var(--color-accent);
     overflow: hidden;
+    margin: 0 1.5em; 
 }
 
 .work__image {
@@ -391,4 +548,48 @@ nav {
     opacity: .5;
 }
 
+/* Footer */
+
+.contact {
+    background-color: #111;
+    text-align: center; 
+    color: var(--color-accent);
+    padding: 3em 0; 
+}
+
+.contact a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.contact__link {
+    font-weight: var(--fw-bold);
+    font-size: 1.75rem;
+}
+
+.contact__link:hover, 
+.contact-list__item:hover {
+    opacity: .5;
+}
+
+.contact-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: .5em 0; 
+    padding: 0;
+    font-size: 2rem; 
+}
+
+.contact-list__item {
+    margin: 0 .5em; 
+}
+
+.contact-list__link {
+    padding: .2em;
+}
+
+.fa-arrow-right {
+    padding-left: .5em;
+}
 

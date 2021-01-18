@@ -22,6 +22,11 @@
   </head>
   <body>
 
+
+
+    <!-- Introduction -->
+
+    <section class="intro" id="home">
     <!-- Header -->
     <header>
       <button class="nav-toggle" aria-label="toggle navigation">
@@ -46,9 +51,6 @@
       </nav>
     </header>
 
-    <!-- Introduction -->
-
-    <section class="intro" id="home">
       <div class= "intro__container">
       <h1 class="section__title section__title--intro">Hi there! I'm <br> <strong>Heather <br> Strodtman</strong></h1>
       <p class="section__subtitle section__subtitle--intro">Full Stack Web Developer - <br> Kansas City, MO</p> <!-- If issues with resizing take of KC MO -->
@@ -63,20 +65,26 @@
     <section class="my-skills" id="skills">
       <h2 class="section__title section__title--skills">What I Do/Skills</h2>
       <!-- Below will hold icons for tech skills -->
+      <!-- Should change these to ul with li but need to make sure no formating is based on tags -->
       <div class="skills">
         <div class="skill">
+          <i class="fab fa-git-alt"></i>
           <h3>Git</h3>
         </div>
         <div class="skill">
+          <i class="fab fa-java"></i>
           <h3>Java</h3>
         </div>
         <div class="skill">
+          <i class="fab fa-js-square"></i>
           <h3>JavaScript</h3>
         </div>
         <div class="skill">
+          <i class="fab fa-html5"></i>
           <h3>HTML</h3>
         </div>
         <div class="skill">
+          <i class="fab fa-css3-alt"></i>
           <h3>CSS</h3>
         </div>
       </div>
@@ -105,11 +113,11 @@
         <p class="section__subtitle section__subtitle--work">Here is some of my work and training</p>
         <div class="work__content">
           <!-- Portfolio Item -->
-            <a href="#" class="work__item">
+            <a href="https://hstrodtman.github.io/wildlife-career/" class="work__item" target="_blank">
                 <img src="images/herp_scaled.JPG" alt="orange and black salamander" class="work__image">
             </a>
             <!-- Portfolio Item -->
-            <a href="#" class="work__item">
+            <a href="https://github.com/LaunchCodeLiftoffProjects/KC-Water-Garden-App" class="work__item" target="_blank">
                 <img src="images/water_garden_portfolio_pic.JPG" alt="water garden read-me introduction" class="work__image">
             </a>
             <!-- Portfolio Item -->
@@ -121,10 +129,16 @@
 
     <!-- Footer -->
     <footer class="contact" id="contact">
-        <a href="mailto:heatherstrodtman@gmail.com" class="contact__link">Email Me <span class="arrow-right">→</span></a>
+        <a href="mailto:heatherstrodtman@gmail.com" class="contact__link">Email Me   <i class="fas fa-arrow-right"></i></a>
         <ul class="contact-list"> 
-            <li class="contact-list__item"><a href="https://www.linkedin.com/in/heather-strodtman/" class="contact-list__link">LinkedIn</a></li>
-            <li class="contact-list__item"><a href="https://github.com/hstrodtman" class="contact-list__link">GitHub</a></li>
+            <li class="contact-list__item">
+              <a href="https://www.linkedin.com/in/heather-strodtman/" class="contact-list__link" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a></li>
+            <li class="contact-list__item">
+              <a href="https://github.com/hstrodtman" class="contact-list__link" target="_blank">
+                <i class="fab fa-github"></i>
+              </a></li>
         </ul>
     </footer>
   </body>
