@@ -7,16 +7,16 @@
 /* Custom Properties */
 
 :root {
-    --ff-primary: 'Lato', sans-serif; 
+    --ff-primary: 'Economica', sans-serif;
     --ff-secondary: 'Source Sans Pro', sans-serif; 
 
     --fw-regular: 300; 
     --fw-bold: 900; 
 
     --color-light: #ffffff; 
-    --color-light: white; 
-    --color-dark: #303030;  
+    --color-dark: #303030; 
     --color-accent: #bbdde1; 
+    --color-accent: #ffffff; 
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -37,6 +37,10 @@
 }
 
 /* General Styles */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--color-light);
@@ -71,6 +75,11 @@ img {
 .btn:hover {
     transform: scale(1.1);
 }
+
+:focus .hamburger {
+    margin: 5px;  
+}
+
 /* Typography */
 
 h1, 
@@ -91,8 +100,6 @@ h2 {
 h3 {
     font-size: var(--fs-h3); 
 }
-
-/* Probably do no need this because don't have regular font weight set for intro title like tutorial  */
 
 strong {
     font-weight: var(--fw-bold);
@@ -132,26 +139,23 @@ strong {
 
 /* Header */
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
     header {
-        /* display: flex;
-        justify-content: space-between; */
-        padding: 1em;
-        /* Need below when header is inside introduction in HTML */
-        position: fixed; 
+        /* padding: 1em; */
+        /* position: fixed; 
         top: 0; 
         bottom: 0; 
         left: 0; 
         right: 0; 
-        z-index: 100;
-    }
-}
+        z-index: 100; */
+    /* }  */
+/* }  */
 
 /* Nav all sizes */
 
 .nav {
     position: fixed; 
-    transform: translate(100%); 
+    transform: translate(-100%); 
     top: 0; 
     bottom: 0; 
     left: 0; 
@@ -189,6 +193,7 @@ strong {
     z-index: 1000;
 }
 
+
 .hamburger { 
     display: block;
     position: relative;
@@ -203,6 +208,16 @@ strong {
     border-radius: 1em;
     transition: transform 250ms ease-in-out;
 }
+
+@media (max-width: 600px) {
+    
+    .nav-open .hamburger, 
+    .nav-open .hamburger::before, 
+    .nav-open .hamburger::after {
+    background-color: var(--color-accent);
+    }
+}
+
 
 .hamburger::after, 
 .hamburger::before {
@@ -220,9 +235,30 @@ strong {
     bottom: 8px; 
 }
 
-/* Small screen header and nav*/
+.nav-open .nav {
+    transform: translateX(0);
+}
 
-@media (max-width: 600px) {
+.nav-open .nav-toggle {
+    position: fixed; 
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger:before {
+    transform: rotate(90deg) translateX(-8px);
+}
+
+.nav-open .hamburger:after {
+    opacity: 0; 
+}
+
+
+/* Small screen header and nav*/
+ 
+@media (max-width: 600px) { 
 
     header {
         padding: 1em; 
@@ -243,10 +279,11 @@ strong {
         right: 1em; 
         top: 1em; 
     }
-}
+ } 
 
 
 /* Nav on large screens */
+/* Checked this section for hamburger scrolling issue */
 
 @media (min-width: 600px) {
 
@@ -262,10 +299,11 @@ strong {
         
     .nav__list a {
         font-size: 2rem; 
-        text-shadow: -1px 1px 0px #000,
+        color: var(--color-dark);
+        /* text-shadow: -1px 1px 0px #000,
                       1px 1px 0px #000,
                       1px -1px 0 #000,
-                      -1px -1px 0 #000;    
+                      -1px -1px 0 #000;     */
         letter-spacing: .2rem; 
     }
 
@@ -273,7 +311,7 @@ strong {
         left: 1em; 
         top: 1em;
     }
-    
+        
 }
 
 /* Intro Section */
@@ -283,6 +321,11 @@ strong {
     background-color: var(--color-accent); /* setting the intro background color at small screens */
 }
 
+.section__title--intro {
+    text-transform: uppercase; 
+    font-size: 4.2em;
+}
+
 /* Skills */
 
 .skill {
@@ -290,7 +333,7 @@ strong {
 }
 
 @media (max-width: 600px) {
-    .intro{
+    .intro {
         position: relative; 
         bottom: 0;
         padding: 6em 2em 0; 
@@ -327,11 +370,9 @@ strong {
         top: 0%; 
         width: 68%;
         height: 100%;  
-        /* background-color: var(--color-accent);   */
-        background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80); 
-        background-image: url(https://images.unsplash.com/photo-1586788224331-947f68671cf1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80);
-        background-size: cover; 
-        /* background-blend-mode: multiply; */
+        background-color: var(--color-accent);  
+        /* background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80); */
+        /* background-size: cover;  */
         
     }
 
@@ -344,8 +385,7 @@ strong {
         top: 0%; 
         width: 32%;
         height: 100%; 
-        /* background-color: darkcyan;  */
-        /* background: linear-gradient(#eb01a5, #d13531);    */
+        /* background-color: rgb(212, 84, 45);  */
         /* background-image: url(https://images.unsplash.com/photo-1513624954087-ca7109c0f710?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); */
     }
 
@@ -391,6 +431,12 @@ strong {
     }
 }
 
+@media (max-width: 1000px) {
+    .intro__image {
+        min-width: 500px;
+    }
+}
+
 /* My skills section */
 
 .my-skills {
@@ -425,6 +471,7 @@ strong {
     font-size: 3.5rem;
 }
 
+
 @media (min-width: 600px) {
 
     .my-skills {
@@ -432,7 +479,8 @@ strong {
     }
 }
 
-/* Have two columns of icons at smaller sizes */
+/* Have two columns of icons at smaller sizes ?*/
+
 
 @media (min-width: 800px) {
     .skills {
@@ -448,8 +496,7 @@ strong {
 
 .about-me {
     max-width: 92%; 
-    margin: 0 auto;
-    
+    margin: 0 auto;    
 }
 
 .about-me__image {
@@ -463,8 +510,6 @@ strong {
         text-align: center;
     }
 }
-
-
 
 @media (min-width: 600px){
 
@@ -503,12 +548,6 @@ strong {
     .about-me {
         grid-template-columns: 1fr 300px;
     }    
-}
-
-@media (max-width: 1000px) {
-    .intro__image {
-        min-width: 500px;
-    }
 }
 
 /* My Work */
