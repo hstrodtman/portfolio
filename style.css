@@ -4,18 +4,21 @@
     box-sizing: border-box;
 } 
 
+
+
 /* Custom Properties */
 
 :root {
-    --ff-primary: 'Economica', sans-serif;
+    --ff-primary:'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Sans Pro', sans-serif; 
 
     --fw-regular: 300; 
     --fw-bold: 900; 
 
-    --color-light: #ffffff; 
+    --color-light: #f3f3f3; 
     --color-dark: #303030; 
-    --color-accent: #bbdde1; 
+    --color-accent: #8fd3d4; 
+    --color-accent: #78D8DA; 
 
 
 
@@ -30,7 +33,7 @@
 
 @media (min-width: 800px) {
     :root {
-        --fs-h1: 4.5rem;
+        --fs-h1: 4rem;
         --fs-h2: 3.75rem;
         --fs-h3: 1.5rem; 
         --fs-body: 1.125rem;
@@ -65,9 +68,9 @@ img {
 .btn {
     display: inline-block; 
     padding: .5em 2.5em;
-    background-color: var(--color-accent);
+    background-color: var(--color-dark);
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--color-accent);
     /* text-transform: uppercase; */
     font-weight: var(--fw-bold);
     transition: transform 200ms ease-in-out;
@@ -112,7 +115,6 @@ strong {
 
 .section__title--intro {
     font-weight: var(--ff-reg);
-   
 }
 
 .section__subtitle {
@@ -121,8 +123,7 @@ strong {
 }
 
 .section__subtitle--intro {
-    color: #511519;
-    color: #44101c; 
+    font-weight: var(--fw-bold);
 }
 
 .section__subtitle--intro,
@@ -278,8 +279,8 @@ strong {
     }
     
     .nav__list {
-            align-items: center;
-            padding: 0; 
+        align-items: center;
+        padding: 0; 
     }
 
     .nav-toggle {
@@ -288,9 +289,7 @@ strong {
     }
  } 
 
-
 /* Nav on large screens */
-/* Checked this section for hamburger scrolling issue */
 
 @media (min-width: 600px) {
 
@@ -307,10 +306,6 @@ strong {
     .nav__list a {
         font-size: 2rem; 
         color: var(--color-dark);
-        /* text-shadow: -1px 1px 0px #000,
-                      1px 1px 0px #000,
-                      1px -1px 0 #000,
-                      -1px -1px 0 #000;     */
         letter-spacing: .2rem; 
     }
 
@@ -329,8 +324,9 @@ strong {
 }
 
 .section__title--intro {
-    text-transform: uppercase; 
-    font-size: 4.2em;
+    /* text-transform: uppercase;  */
+    letter-spacing: .05em;
+    font-size: var(--fs-h1); 
 }
 
 /* Skills */
@@ -354,7 +350,7 @@ strong {
 @media (min-width: 600px) {
 
     .intro {
-        padding: 15em 0em 0em 2em; 
+        padding: 8em 0em 0em 2em; 
     }
 
     .intro__container {
@@ -367,6 +363,7 @@ strong {
             "img title"
             "img subtitle";
         grid-template-columns: 40% 60%;
+    
     }
 
     /* Adding colored background to only right sided of header, may take out */
@@ -377,11 +374,6 @@ strong {
         top: 0%; 
         width: 68%;
         height: 100%;  
-        background-color: var(--color-accent); 
-        background: linear-gradient(to bottom, #8ed8e6, #bbdde1 33%, #bbdde1 100%);
-        /* background-image: url(https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80); */
-        /* background-size: cover;  */
-        
     }
 
     /* Setting color for left side of intro, may take out */
@@ -393,16 +385,24 @@ strong {
         top: 0%; 
         width: 32%;
         height: 100%; 
-        /* background-color: rgb(212, 84, 45);  */
+        /* background: linear-gradient(to bottom, #8ed8e6, #78D8DA 33%, #78D8DA 100%); */
+        /* background-color: var(--color-accent);  */
         /* background-image: url(https://images.unsplash.com/photo-1513624954087-ca7109c0f710?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); */
     }
 
     /* Considering adding another container for visual impact */
-    /* /* .intro__container:after  */
+    /* /* .intro__container:after  */ 
 
     .intro__image {
         grid-area: img; 
         min-width: 600px;  
+        /* background-image: url(images/background_watercolor.png);
+        background-size: cover; 
+        background-repeat: no-repeat;  */
+        background-image: url(images/watercolor2.png);
+        background-size: 100%; 
+        background-repeat: no-repeat;
+        
     }
 
  
@@ -412,15 +412,22 @@ strong {
         align-content: start;
         /* these changes may need undone if responsivness is broken */
         position: absolute;
-        bottom: 40%; 
-        left: 55%; 
+        bottom: 50%; 
+        left: 60%; 
     }    
 
     .section__subtitle--intro {
         grid-row: 2; 
         position: absolute;
-        bottom: 25%; 
-        left: 55%; 
+        bottom: 35%; 
+        left: 60%; 
+    }
+
+    .intro .btn {
+        grid-row: 2; 
+        position: absolute;
+        bottom: 28%; 
+        left: 60%; 
     }
 
     /* needed with the intro:before background setup */
@@ -434,10 +441,10 @@ strong {
 
     .intro {
         background-color: var(--color-light);
+        background-color: var(--color-accent);
         /* background-image: url(https://images.unsplash.com/photo-1589306962951-b3da28bfdfac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80); */
-        background-size: cover; 
         /* background-blend-mode: multiply; */
-        /* Consider changing background color spashes */
+        /* background-size: cover; */
     }
 }
 
@@ -485,7 +492,7 @@ strong {
 @media (min-width: 600px) {
 
     .my-skills {
-        border-top: var(--color-accent) 15px solid;
+        border-top: var(--color-accent) 1rem solid;
     }
 }
 
@@ -641,4 +648,3 @@ strong {
 .fa-arrow-right {
     padding-left: .5em;
 }
-
