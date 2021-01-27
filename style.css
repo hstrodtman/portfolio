@@ -217,7 +217,7 @@ strong {
     transition: transform 250ms ease-in-out;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     
     .nav-open .hamburger, 
     .nav-open .hamburger::before, 
@@ -266,7 +266,7 @@ strong {
 
 /* Small screen header and nav*/
  
-@media (max-width: 600px) { 
+@media (max-width: 650px) { 
 
     header {
         padding: 1em; 
@@ -291,7 +291,7 @@ strong {
 
 /* Nav on large screens */
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
 
     .nav {
         background-color: transparent; 
@@ -335,7 +335,7 @@ strong {
     margin: 1.5em 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .intro {
         position: relative; 
         bottom: 0;
@@ -347,7 +347,7 @@ strong {
 /* May need to change this breakpoint depending on pics and text */
 /* Look at area that text starts to overlap with picture */
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
 
     .intro {
         padding: 8em 0em 0em 2em; 
@@ -399,13 +399,11 @@ strong {
         /* background-image: url(images/background_watercolor.png);
         background-size: cover; 
         background-repeat: no-repeat;  */
-        background-image: url(images/watercolor2.png);
+        /* background-image: url(images/watercolor2.png); */
         background-size: 100%; 
         background-repeat: no-repeat;
         
     }
-
- 
 
     .section__title--intro {
         display: grid;
@@ -484,12 +482,12 @@ strong {
 }
 
 .skills {
-    margin-bottom: 4em;
+    /* margin-bottom: 1em; */
     font-size: 3.5rem;
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
 
     .my-skills {
         border-top: var(--color-accent) 1rem solid;
@@ -520,7 +518,7 @@ strong {
     box-shadow: var(--bs);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .section__title--about,
     .section__subtitle--about {
@@ -528,7 +526,7 @@ strong {
     }
 }
 
-@media (min-width: 600px){
+@media (min-width: 650px){
 
     .about-me {
         display: grid;
@@ -551,6 +549,8 @@ strong {
         left: -1em; 
         width: calc(100% + 4em); 
         padding-left: 1em; 
+        padding: .5em 0em .5em 1em; 
+        margin: auto; 
     }
 
     .about-me__image {
